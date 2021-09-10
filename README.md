@@ -11,6 +11,7 @@ master          Demo finished
 - [ ] pull master
 - [ ] dotnet add lab.api.tests package SpecFlow.xUnit --version 3.9.22
 - [ ] dotnet add lab.api.tests package SpecFlow.Plus.LivingDocPlugin --version 3.9.57
+- [ ] dotnet add lab.api.tests package Microsoft.AspNetCore.TestHost --version 5.0.9
 - [ ] md .\lab.api.tests\Drivers
 - [ ] md .\lab.api.tests\Features
 - [ ] md .\lab.api.tests\Hooks

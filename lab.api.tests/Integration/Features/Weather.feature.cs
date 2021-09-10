@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace lab.api.tests.Features
+namespace lab.api.tests.Integration.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace lab.api.tests.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AddFeature : object, Xunit.IClassFixture<AddFeature.FixtureData>, System.IDisposable
+    public partial class WeatherFeature : object, Xunit.IClassFixture<WeatherFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace lab.api.tests.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Add.feature"
+#line 1 "Weather.feature"
 #line hidden
         
-        public AddFeature(AddFeature.FixtureData fixtureData, lab_api_tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public WeatherFeature(WeatherFeature.FixtureData fixtureData, lab_api_tests_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace lab.api.tests.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Add", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Integration/Features", "Weather", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,14 +80,14 @@ namespace lab.api.tests.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers")]
-        [Xunit.TraitAttribute("FeatureTitle", "Add")]
-        [Xunit.TraitAttribute("Description", "Add two numbers")]
-        public virtual void AddTwoNumbers()
+        [Xunit.SkippableFactAttribute(DisplayName="Get 1 day of weather")]
+        [Xunit.TraitAttribute("FeatureTitle", "Weather")]
+        [Xunit.TraitAttribute("Description", "Get 1 day of weather")]
+        public virtual void Get1DayOfWeather()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get 1 day of weather", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 2
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -109,10 +109,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 3
-    testRunner.When("i add 2 and 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("i ask api for todays weather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 4
-    testRunner.Then("the result should be 5", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Then("celcius should be -15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 5
+    testRunner.And("fahrenheit should be 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -125,12 +128,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                AddFeature.FeatureSetup();
+                WeatherFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                AddFeature.FeatureTearDown();
+                WeatherFeature.FeatureTearDown();
             }
         }
     }
