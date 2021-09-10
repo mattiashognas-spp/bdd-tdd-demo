@@ -1,0 +1,125 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build lab.api",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/lab.api/lab.api.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish lab.api",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/lab.api/lab.api.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        // {
+        //     "label": "watch lab.api",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "watch",
+        //         "run",
+        //         "${workspaceFolder}/lab.api/lab.api.csproj",
+        //         "/property:GenerateFullPaths=true",
+        //         "/consoleloggerparameters:NoSummary"
+        //     ],
+        //     "problemMatcher": "$msCompile"
+        // },
+        // {
+        //     "label": "build lab.api.tests",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "build",
+        //         "${workspaceFolder}/lab.api.tests/lab.api.tests.csproj",
+        //         "/property:GenerateFullPaths=true",
+        //         "/consoleloggerparameters:NoSummary"
+        //     ],
+        //     "problemMatcher": "$msCompile"
+        // },
+        // {
+        //     "label": "publish lab.api.tests",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "publish",
+        //         "${workspaceFolder}/lab.api.tests/lab.api.tests.csproj",
+        //         "/property:GenerateFullPaths=true",
+        //         "/consoleloggerparameters:NoSummary"
+        //     ],
+        //     "problemMatcher": "$msCompile"
+        // },
+        // {
+        //     "label": "watch lab.api.tests",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "watch",
+        //         "run",
+        //         "${workspaceFolder}/lab.api.tests/lab.api.tests.csproj",
+        //         "/property:GenerateFullPaths=true",
+        //         "/consoleloggerparameters:NoSummary"
+        //     ],
+        //     "problemMatcher": "$msCompile",
+        //     "options": { "cwd": "${workspaceFolder}/lab.api.tests/" },
+        // },
+        {
+            "label": "build lab.api.tests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/lab.api.tests/lab.api.tests.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test lab.api.tests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/lab.api.tests/lab.api.tests.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "test with coverage lab.api.tests",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=lcov",
+                "/p:CoverletOutput=./lcov.info",
+                "${workspaceFolder}/lab.api.tests/lab.api.tests.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}

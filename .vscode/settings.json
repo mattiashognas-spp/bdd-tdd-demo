@@ -1,0 +1,7 @@
+{
+    "git.autofetch": true,
+    "dotnet-test-explorer.autoExpandTree": true,
+    "dotnet-test-explorer.testProjectPath": "./lab.api.tests",
+    "dotnet-test-explorer.autoWatch": true,
+    "razor.plugin.path": ""
+}

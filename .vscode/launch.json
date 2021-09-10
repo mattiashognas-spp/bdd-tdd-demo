@@ -1,0 +1,74 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Use IntelliSense to find out which attributes exist for C# debugging
+            // Use hover for the description of the existing attributes
+            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            "name": "Launch lab.api",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build lab.api",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/lab.api/bin/Debug/net5.0/lab.api.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(http?://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/lab.api/Views"
+            }
+        },
+        {
+            // Use IntelliSense to find out which attributes exist for C# debugging
+            // Use hover for the description of the existing attributes
+            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            "name": "Launch lab.api.tests",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build lab.api.tests",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/lab.api.tests/bin/Debug/net5.0/lab.api.tests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/lab.api.tests",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            // Use IntelliSense to find out which attributes exist for C# debugging
+            // Use hover for the description of the existing attributes
+            // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+            "name": "Watch lab.api.tests",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "watch lab.api.tests",
+            // If you have changed target frameworks, make sure to update the program path.
+            "program": "${workspaceFolder}/lab.api.tests/bin/Debug/net5.0/lab.api.tests.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/lab.api.tests",
+            "console": "integratedTerminal",
+            "stopAtEntry": false,
+            "internalConsoleOptions": "openOnSessionStart",
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach",
+            "processId": "${command:pickProcess}"
+        }
+    ]
+}
