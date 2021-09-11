@@ -15,6 +15,7 @@ using Xunit;
 
 namespace lab.api.tests.Integration
 {
+    [Trait("Category","IntegrationTest")]
     public class WeatherTests
     {
         [Theory]

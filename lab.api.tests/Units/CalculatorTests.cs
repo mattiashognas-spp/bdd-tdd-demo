@@ -7,6 +7,7 @@ using lab.api.Data;
 
 namespace lab.api.tests.Units
 {
+    [Trait("Category","UnitTest")]
     public class CalculatorTests
     {
         [Theory]
