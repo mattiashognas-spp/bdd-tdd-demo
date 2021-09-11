@@ -1,5 +1,5 @@
 using FluentAssertions;
-using lab.api.Controllers;
+using lab.api.Data;
 using Microsoft.Extensions.Logging;
 using Moq;
 using TechTalk.SpecFlow;
@@ -27,12 +27,25 @@ namespace lab.api.tests.Steps
             }
         }
 
-        [When(@"i add (.*) and (.*)")]
+        [When(@"I add (.*) and (.*)")]
         public void WhenIAddAnd(int value0, int value1)
         {
-            var logger = new Mock<ILogger<CalculatorController>>();
-            var calculator = new CalculatorController(logger.Object);
+            var calculator = new Calculator();
             _result = calculator.Add(value0, value1);
+        }
+
+        [When(@"I subtract (.*) from (.*)")]
+        public void WhenISubtractFrom(int value0, int value1)
+        {
+            var calculator = new Calculator();
+            _result = calculator.Subtract(value1, value0);
+        }
+
+        [When(@"I ask for fahrenheit from (.*) celsius")]
+        public void WhenIAskForFahrenheitFromCelsius(int value0)
+        {
+            var calculator = new Calculator();
+            _result = calculator.GetFahrenheitFromCelsius(value0);
         }
 
         [Then(@"the result should be (.*)")]

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentAssertions;
 using lab.api.Controllers;
 using lab.api.Models;
 using Microsoft.AspNetCore.Hosting;
@@ -49,6 +50,18 @@ namespace lab.api.tests.Integration
             responseMessage.EnsureSuccessStatusCode();
             var responseJson = await responseMessage.Content.ReadAsStringAsync();
             _result = JsonConvert.DeserializeObject<IEnumerable<WeatherForecast>>(responseJson).First();
+        }
+
+        [Then(@"celcius should be (.*)")]
+        public void ThenCelciusShouldBe(int celcius)
+        {
+            _result.TemperatureC.Should().Be(celcius);
+        }
+        
+        [Then(@"fahrenheit should be (.*)")]
+        public void ThenFahrenheitShouldBe(int fahrenheit)
+        {
+            _result.TemperatureF.Should().Be(fahrenheit);
         }
     }
 }

@@ -88,8 +88,8 @@ namespace lab.api.tests.Integration.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get 1 day of weather", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 2
-this.ScenarioInitialize(scenarioInfo);
+#line 5
+    this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
             bool isFeatureIgnored = default(bool);
@@ -108,14 +108,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 3
-    testRunner.When("i ask api for todays weather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 6
+        testRunner.When("i ask api for todays weather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 4
-    testRunner.Then("celcius should be -15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 7
+        testRunner.Then("celcius should be -15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 5
-    testRunner.And("fahrenheit should be 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 8
+        testRunner.And("fahrenheit should be 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
