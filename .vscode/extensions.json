@@ -1,0 +1,9 @@
+  
+{
+	"recommendations": [
+		"ms-dotnettools.csharp",
+		"alexkrechik.cucumberautocomplete",
+		"formulahendry.dotnet-test-explorer",
+		"jmrog.vscode-nuget-package-manager"
+	]
+}
