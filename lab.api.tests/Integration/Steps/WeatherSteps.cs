@@ -1,11 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FluentAssertions;
+using lab.api.Contracts;
 using lab.api.Controllers;
 using lab.api.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Newtonsoft.Json;
@@ -34,14 +37,17 @@ namespace lab.api.tests.Integration
             }
         }
 
-        [When(@"i ask api for todays weather")]
-        public async Task WhenIAskForTodaysWeatherAsync()
+        [When(@"I ask api for todays weather with celcius (.*)")]
+        public async Task WhenIAskApiForTodaysWeatherWithCelsiusAsync(int celcius)
         {
             // Arrange
             var logger = new Mock<ILogger<WeatherForecastController>>();
+            var weatherData = new Mock<IWeatherData>();
+            weatherData.Setup(x => x.GetCelsiusTemperature(It.IsAny<DateTime>())).Returns(celcius);
             var builder = new WebHostBuilder()
                 .UseEnvironment("Development")
-                .UseStartup<lab.api.Startup>();
+                .UseStartup<lab.api.Startup>()
+                .ConfigureTestServices(services => services.AddScoped<IWeatherData>((x) => weatherData.Object));
             var testServer = new TestServer(builder);
             var client = testServer.CreateClient();
 
@@ -52,16 +58,22 @@ namespace lab.api.tests.Integration
             _result = JsonConvert.DeserializeObject<IEnumerable<WeatherForecast>>(responseJson).First();
         }
 
-        [Then(@"celcius should be (.*)")]
-        public void ThenCelciusShouldBe(int celcius)
+        [Then(@"celsius should be (.*)")]
+        public void ThenApiShouldReturnCelciusAndTodaysDate(int celcius)
         {
             _result.TemperatureC.Should().Be(celcius);
         }
-        
-        [Then(@"fahrenheit should be (.*)")]
-        public void ThenFahrenheitShouldBe(int fahrenheit)
+
+        [Then(@"date should be today")]
+        public void ThenTodaysDate()
         {
-            _result.TemperatureF.Should().Be(fahrenheit);
+            _result.Date.Day.Should().Be(DateTime.Now.Day);
         }
+        
+        // [Then(@"fahrenheit should be (.*)")]
+        // public void ThenFahrenheitShouldBe(int fahrenheit)
+        // {
+        //     _result.TemperatureF.Should().Be(fahrenheit);
+        // }
     }
 }

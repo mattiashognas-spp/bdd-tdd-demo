@@ -46,22 +46,22 @@ namespace lab.api.tests.Units
                 .Be(expected);
         }
 
-        [Theory]
-        [InlineData(10, 49)]
-        [InlineData(15, 58)]
-        [InlineData(43, 109)]
-        public void Verify_that_calculator_gets_fahrenheit_from_celsius_correct(int value, int expected)
-        {
-            // Arrange
-            var calculator = new Calculator();
+        // [Theory]
+        // [InlineData(10, 49)]
+        // [InlineData(15, 58)]
+        // [InlineData(43, 109)]
+        // public void Verify_that_calculator_gets_fahrenheit_from_celsius_correct(int value, int expected)
+        // {
+        //     // Arrange
+        //     var calculator = new Calculator();
 
-            // Act
-            var result = calculator.GetFahrenheitFromCelsius(value);
+        //     // Act
+        //     var result = calculator.GetFahrenheitFromCelsius(value);
             
-            // Assert
-            result
-                .Should()
-                .Be(expected);
-        }
+        //     // Assert
+        //     result
+        //         .Should()
+        //         .Be(expected);
+        // }
     }
 }

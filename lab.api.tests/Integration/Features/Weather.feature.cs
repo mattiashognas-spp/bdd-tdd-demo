@@ -83,14 +83,14 @@ namespace lab.api.tests.Integration.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Get 1 day of weather")]
+        [Xunit.SkippableFactAttribute(DisplayName="Get today\'s weather")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather")]
-        [Xunit.TraitAttribute("Description", "Get 1 day of weather")]
-        public virtual void Get1DayOfWeather()
+        [Xunit.TraitAttribute("Description", "Get today\'s weather")]
+        public virtual void GetTodaysWeather()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get 1 day of weather", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get today\'s weather", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -112,13 +112,13 @@ namespace lab.api.tests.Integration.Features
             {
                 this.ScenarioStart();
 #line 7
-        testRunner.When("i ask api for todays weather", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+        testRunner.When("I ask api for todays weather with celcius -15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
-        testRunner.Then("celcius should be -15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+        testRunner.Then("celsius should be -15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 9
-        testRunner.And("fahrenheit should be 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+        testRunner.And("date should be today", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

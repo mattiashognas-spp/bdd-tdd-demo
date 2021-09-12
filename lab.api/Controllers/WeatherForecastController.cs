@@ -27,15 +27,19 @@ namespace lab.api.Controllers
         }
 
         [HttpGet("{days?}")]
-        public IEnumerable<WeatherForecast> Get(int days = 5)
+        public IEnumerable<WeatherForecast> Get(int days = 1)
         {
             return Enumerable
                 .Range(0, days)
-                .Select(index => 
-                    new WeatherForecast(
-                        DateTime.Now.AddDays(index+1),
-                        _weatherData.Temperatures[index],
-                        _calculator.GetFahrenheitFromCelsius(_weatherData.Temperatures[index])))
+                .Select(index => {
+                    var date = DateTime.Now.AddDays(index);
+                    var temperatureC = _weatherData.GetCelsiusTemperature(date);
+                    return new WeatherForecast(
+                        date
+                        ,temperatureC
+                        //,_calculator.GetFahrenheitFromCelsius(temperatureC)
+                    );
+                })
                 .ToArray();
         }
     }
