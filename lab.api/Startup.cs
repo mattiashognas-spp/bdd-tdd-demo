@@ -21,6 +21,8 @@ namespace lab.api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // services.AddDbContext<TodoContext>(opt =>
+            //     opt.UseInMemoryDatabase("Weather"));
             services.AddScoped<ICalculator>((x) => new Calculator());
             services.AddScoped<IWeatherData>((x) => new WeatherDataFromDatabase());
             services.AddControllers();
@@ -40,11 +42,7 @@ namespace lab.api
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "lab.api v1"));
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

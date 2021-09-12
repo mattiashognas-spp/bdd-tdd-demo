@@ -4,6 +4,6 @@ namespace lab.api.Contracts
     {
         int Add(int a, int b);
         int Subtract(int a, int b);
-        int GetFahrenheitFromCelsius(int celcius);
+        //int GetFahrenheitFromCelsius(int celcius);
     }
 }

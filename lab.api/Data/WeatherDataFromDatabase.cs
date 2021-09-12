@@ -1,18 +1,14 @@
+using System;
 using lab.api.Contracts;
 
 namespace lab.api.Data
 {
     public class WeatherDataFromDatabase : IWeatherData
     {
-        public int[] Temperatures
+        public int GetCelsiusTemperature(DateTime date)
         {
-            get
-            {
-                return new[]
-                {
-                    -15, 5, 15, 25, 30
-                };
-            }
+            var rnd = new Random();
+            return rnd.Next(-40, 50);
         }
     }
 }

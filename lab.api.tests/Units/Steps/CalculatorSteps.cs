@@ -41,12 +41,12 @@ namespace lab.api.tests.Steps
             _result = calculator.Subtract(value1, value0);
         }
 
-        [When(@"I ask for fahrenheit from (.*) celsius")]
-        public void WhenIAskForFahrenheitFromCelsius(int value0)
-        {
-            var calculator = new Calculator();
-            _result = calculator.GetFahrenheitFromCelsius(value0);
-        }
+        // [When(@"I ask for fahrenheit from (.*) celsius")]
+        // public void WhenIAskForFahrenheitFromCelsius(int value0)
+        // {
+        //     var calculator = new Calculator();
+        //     _result = calculator.GetFahrenheitFromCelsius(value0);
+        // }
 
         [Then(@"the result should be (.*)")]
         public void ThenTheResultShouldBe(int result)

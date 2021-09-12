@@ -14,9 +14,9 @@ namespace lab.api.Data
             return a - b;
         }
 
-        public int GetFahrenheitFromCelsius(int celcius)
-        {
-            return 32 + (int)(celcius / 0.5556);
-        }
+        // public int GetFahrenheitFromCelsius(int celcius)
+        // {
+        //     return 32 + (int)(celcius / 0.5556);
+        // }
     }
 }
