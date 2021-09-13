@@ -59,13 +59,13 @@ namespace lab.api.tests.Integration
         }
 
         [Then(@"celsius should be (.*)")]
-        public void ThenApiShouldReturnCelciusAndTodaysDate(int celcius)
+        public void ThenCelsiusShouldBe(int celcius)
         {
             _result.TemperatureC.Should().Be(celcius);
         }
 
         [Then(@"date should be today")]
-        public void ThenTodaysDate()
+        public void ThenDateShouldBeToday()
         {
             _result.Date.Day.Should().Be(DateTime.Now.Day);
         }
