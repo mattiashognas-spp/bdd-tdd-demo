@@ -2,6 +2,7 @@
 {
 	"recommendations": [
 		"ms-dotnettools.csharp",
-		"alexkrechik.cucumberautocomplete"
+		"alexkrechik.cucumberautocomplete",
+		"ryanluker.vscode-coverage-gutters"
 	]
 }

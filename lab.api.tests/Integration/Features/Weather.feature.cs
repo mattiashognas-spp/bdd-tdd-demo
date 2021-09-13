@@ -83,14 +83,14 @@ namespace lab.api.tests.Integration.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Get today\'s weather")]
+        [Xunit.SkippableFactAttribute(DisplayName="Get todays weather")]
         [Xunit.TraitAttribute("FeatureTitle", "Weather")]
-        [Xunit.TraitAttribute("Description", "Get today\'s weather")]
+        [Xunit.TraitAttribute("Description", "Get todays weather")]
         public virtual void GetTodaysWeather()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get today\'s weather", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get todays weather", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 6
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
