@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using lab.api.Contracts;
-using lab.api.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace lab.api.Controllers
