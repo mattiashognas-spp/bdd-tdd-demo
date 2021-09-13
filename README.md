@@ -14,4 +14,4 @@ master          Demo finished
 - [ ] dotnet build ./lab.api
 - [ ] dotnet build ./lab.api.tests
 - [ ] dotnet test /p:AltCover=true ./lab.api.tests
-- [ ] dotnet reportgenerator "-reports:./lab.api.tests/coverage.xml" "-targetdir:coveragereport" -reporttypes:Html -assemblyfilters:"-*!;+lab.api;"
+- [ ] dotnet reportgenerator "-reports:./lab.api.tests/coverage.xml" "-targetdir:coveragereport" -reporttypes:Html -assemblyfilters:"-*!;+lab.api;" -classfilters:"-System.*;-Microsoft.*;"
