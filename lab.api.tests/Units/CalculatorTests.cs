@@ -1,8 +1,5 @@
-using System.Linq;
 using Xunit;
 using FluentAssertions;
-using Moq;
-using Microsoft.Extensions.Logging;
 using lab.api.Data;
 
 namespace lab.api.tests.Units

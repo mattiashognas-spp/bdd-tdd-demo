@@ -1,5 +1,4 @@
 bin
 obj
-coverage
+lcov.info
 coveragereport
-coverage.xml
