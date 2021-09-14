@@ -4,19 +4,10 @@ namespace lab.api.Data
 {
     public class Calculator : ICalculator
     {
-        public int Add(int a, int b)
-        {
-            return a + b;
-        }
+        public int Add(int a, int b) => a + b;
 
-        public int Subtract(int a, int b)
-        {
-            return a - b;
-        }
+        public int Subtract(int a, int b) => a - b;
 
-        // public int GetFahrenheitFromCelsius(int celcius)
-        // {
-        //     return 32 + (int)(celcius / 0.5556);
-        // }
+        // public int GetFahrenheitFromCelsius(int celcius) => 32 + (int)(celcius / 0.5556);
     }
 }

@@ -1,7 +1,5 @@
 {
     "git.autofetch": true,
-    "dotnet-test-explorer.autoExpandTree": true,
-    "dotnet-test-explorer.testProjectPath": "./lab.api.tests",
-    "dotnet-test-explorer.autoWatch": true,
-    "razor.plugin.path": ""
+    "coverage-gutters.showLineCoverage": true,
+    "coverage-gutters.coverageReportFileName": "coveragereport/index.html"
 }
